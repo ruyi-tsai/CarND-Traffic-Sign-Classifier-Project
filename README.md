@@ -26,33 +26,51 @@ You're not required to use markdown for your writeup.  If you use another method
 The Project
 ---
 The goals / steps of this project are the following:
-* Load the data set
-* Explore, summarize and visualize the data set
-* Design, train and test a model architecture
-* Use the model to make predictions on new images
+step 1 : Load the data set
+---
+In this steps, the provided data is loaded using the pickle library. The images have labels to recognize what they represent. The labels are numbers, but there is a .csv file containing the mapping between the labels and a text name of the image to make it more human-friendly.
+
+step 2:  Explore, summarize and visualize the data set
+---
+Here the data set is explored. First, show some general numbers about it:
+* Number of training examples = 27839
+* Number of testing examples = 12630
+* Image data shape = (32, 32, 3)
+* Number of classes = 27839
+
+step 3: Design, train and test a model architecture
+---
+Convolution layer 1. The output shape should be 28x28x6.
+
+Activation 1. Your choice of activation function.
+
+Pooling layer 1. The output shape should be 14x14x6.
+
+Convolution layer 2. The output shape should be 10x10x16.
+
+Activation 2. relu activation function.
+
+Pooling layer 2. The output shape should be 5x5x16.
+
+Flatten layer. Flatten the output shape of the final pooling layer such that it's 1D instead of 3D. The easiest way to do is by using tf.contrib.layers.flatten, which is already imported for you.
+
+Fully connected layer 1. This should have 120 outputs.
+
+Activation 3. relu activation function.
+
+Fully connected layer 2. This should have 84 outputs.
+
+Activation 4. relu activation function.
+
+Fully connected layer 3. This should have 10 outputs.
+
+
+
+step 4. Use the model to make predictions on new images
+---
+
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-### Dependencies
-This lab requires:
 
-* [CarND Term1 Starter Kit](https://github.com/udacity/CarND-Term1-Starter-Kit)
-
-The lab environment can be created with CarND Term1 Starter Kit. Click [here](https://github.com/udacity/CarND-Term1-Starter-Kit/blob/master/README.md) for the details.
-
-### Dataset and Repository
-
-1. Download the data set. The classroom has a link to the data set in the "Project Instructions" content. This is a pickled dataset in which we've already resized the images to 32x32. It contains a training, validation and test set.
-2. Clone the project, which contains the Ipython notebook and the writeup template.
-```sh
-git clone https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project
-cd CarND-Traffic-Sign-Classifier-Project
-jupyter notebook Traffic_Sign_Classifier.ipynb
-```
-
-### Requirements for Submission
-Follow the instructions in the `Traffic_Sign_Classifier.ipynb` notebook and write the project report using the writeup template as a guide, `writeup_template.md`. Submit the project code and writeup document.
-
-## How to write a README
-A well written README file can enhance your project and portfolio.  Develop your abilities to create professional README files by completing [this free course](https://www.udacity.com/course/writing-readmes--ud777).
 
