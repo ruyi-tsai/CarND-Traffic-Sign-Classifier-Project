@@ -68,7 +68,7 @@ Fully connected layer 3. This should have 10 outputs.
 
 step 4. Use the model to make predictions on new images
 ---
-[![Udacity - predict image](https://github.com/ruyi-tsai/CarND-Traffic-Sign-Classifier-Project/result.png)
+[![Udacity - predict image](https://github.com/ruyi-tsai/CarND-Traffic-Sign-Classifier-Project/blob/master/result.png)
 
 
 
