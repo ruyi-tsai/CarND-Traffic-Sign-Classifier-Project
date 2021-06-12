@@ -51,8 +51,8 @@ signs data set:
 #### 2. Include an exploratory visualization of the dataset.
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data
-![training dataset][image1]
-![alt text][image1]
+![training dataset][image2]
+![visualization][image1]
 
 ### Design and Test a Model Architecture
 
@@ -96,9 +96,9 @@ training_operation = optimizer.minimize(loss_operation)
 #### 3. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* Test Accuracy = 0.852
+* train Accuracy = 0.976
+* validation Accuracy = 0.950
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
@@ -119,8 +119,7 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![test image][image3]
 
 The first image might be difficult to classify because ...
 
@@ -131,10 +130,11 @@ Here are the results of the prediction:
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| Speed limit (50km/h)    			| Speed limit (50km/h) 										|
+| Bumpy road				| Bumpy road										|
+| Speed limit (20km/h)	      		| Speed limit (20km/h)				 				|
+| Speed limit (30km/h)			|Speed limit (30km/h)      							|
+| Speed limit (60km/h)			|Speed limit (60km/h)      							|
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
@@ -147,16 +147,31 @@ For the first image, the model is relatively sure that this is a stop sign (prob
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| .53         			| Stop sign    									| 
+| .2.1675653e-05    				| Speed limit (50km/h) 	 										|
+| .99					| Bumpy road													|
+| .0	      			| Speed limit (20km/h)				 				|
+| .9				    | Speed limit (30km/h)     							|
+| 1.0			    | Speed limit (60km/h)     							|
 
+INFO:tensorflow:Restoring parameters from .\lenet
+[[5.3014201e-01 4.6933591e-01 5.2100507e-04 1.0354216e-06 3.4842436e-09]
+ [9.7496051e-01 1.4051526e-02 1.0535956e-02 4.3005211e-04 2.1675653e-05]
+ [9.9924314e-01 6.2494935e-04 1.3203399e-04 2.2313480e-09 1.0302140e-18]
+ [5.1201493e-01 4.8798504e-01 4.3405543e-11 2.4774509e-11 6.1084411e-14]
+ [1.0000000e+00 2.3983929e-13 1.0448375e-15 7.9142087e-17 5.5983243e-19]
+ [9.9730992e-01 2.6703512e-03 1.9688114e-05 2.3572751e-13 6.2075338e-14]]
+[[14  8  7  2  1]
+ [33 42 28  3  2]
+ [22 12 26 25 13]
+ [ 5  3  1  2 40]
+ [ 1  2  0  5  6]
+ [ 3  2  1  5 35]]
+New Images Test Accuracy = 80.0%
 
 For the second image ... 
 
 ### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
 #### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
 
-[![Udacity - predict image](https://github.com/ruyi-tsai/CarND-Traffic-Sign-Classifier-Project/blob/master/result.png)
+![Udacity - predict image][image4]
