@@ -19,11 +19,15 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/hist.png "Visualization"
-[image2]: ./examples/train_image.png "Training dataset"
-[image3]: ./examples/test_image.png "Test image"
-[image4]: ./examples/acc.png "training acc"
-[image5]: ./examples/test_image_validation.png "Test image result"
+[image1]: ./examples/hist1.png "Visualization"
+[image2]: ./examples/train_image1.png "Training dataset"
+[image3]: ./examples/test_image1.png "Test image"
+[image4]: ./examples/acc1.png "training acc"
+[image5]: ./examples/test_image_validation1.png "Test image result"
+[image6]: ./examples/test_image_validation2.png "Test image result"
+[image7]: ./examples/test_image_validation3.png "Test image result"
+[image8]: ./examples/test_image_validation4.png "Test image result"
+[image9]: ./examples/test_image_validation5.png "Test image result"
 
 
 ## Rubric Points
@@ -155,12 +159,47 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+image1 prediction
+Top 5 prediction probabilities: [[1.0000000e+00 7.4788867e-17 5.4530958e-20 6.0629548e-21 5.3650680e-22]]
+
+Top 5 prediction ids: [[ 5  6 38 10 25]]
+
+![image1 prediction][image5]
+
+
+image2 prediction
+Top 5 prediction probabilities: [[1.0000000e+00 1.8768512e-10 3.6470696e-12 1.4914224e-12 1.1456215e-13]]
+
+Top 5 prediction ids: [[40  1 20  2 12]]
+
+
+![image2 prediction][image6]
+
+
+image3 prediction
+Top 5 prediction probabilities: [[9.9992561e-01 7.0059883e-05 4.3119339e-06 4.6060009e-13 1.4078725e-14]]
+
+Top 5 prediction ids: [[25 23 21 11 31]]
+
+![image3 prediction][image7]
 
 
 
-For the second image ... 
+image4 prediction
+Top 5 prediction probabilities: [[9.9999988e-01 1.6485251e-07 4.0969379e-08 3.6969006e-08 4.4289821e-09]]
 
-### (Optional) Visualizing the Neural Network (See Step 4 of the Ipython notebook for more details)
-#### 1. Discuss the visual output of your trained network's feature maps. What characteristics did the neural network use to make classifications?
+Top 5 prediction ids: [[34 39 40  3  9]]
 
-![Udacity - predict image][image5]
+
+![image4 prediction][image8]
+
+
+image5 prediction
+Top 5 prediction probabilities: [[1.0000000e+00 6.7018640e-15 1.3108409e-21 5.2212903e-22 8.3676543e-24]]
+
+Top 5 prediction ids: [[13 10 33  9 29]]
+
+
+![image4 prediction][image9]
+
+
