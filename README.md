@@ -56,15 +56,36 @@ Here is an exploratory visualization of the data set. It is a bar chart showing 
 
 ### Design and Test a Model Architecture
 
+#### 0.Pre-process the Data Set (normalization, grayscale, etc.)
+I using normalize image to gray image for training set.
+step 1: All image scaling to  0~1.0 
+```
+def minMaxScalingNormalization(X):
+    a = 0
+    b = 1.0
+    return a + X * (b-a) / 255
+```
 
 
+step 2: then standardize
+```
+
+def standardize(X):
+    # zero-center
+    X -= np.mean(X)
+    
+    # normalize
+    X /= np.std(X) 
+    
+    return (X)
+```
 #### 1. Describe what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
 My final model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
+| Input         		| 32x32x1 RGB image   							| 
 | Convolution 5x5     	| 1x1 stride, same padding, outputs 28x28x6 	|
 | RELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6 				|
@@ -96,9 +117,9 @@ training_operation = optimizer.minimize(loss_operation)
 #### 3. Describe the approach taken for finding a solution and getting the validation set accuracy to be at least 0.93. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
 My final model results were:
-* Test Accuracy = 0.852
-* train Accuracy = 0.976
-* validation Accuracy = 0.950
+* Test Accuracy = 0.942
+* train Accuracy = 1.000
+* validation Accuracy = 0.945
 
 ![training][image4]
  
@@ -119,12 +140,12 @@ Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| Stop Sign      		| Stop sign   									| 
-| Speed limit (50km/h)    			| Speed limit (50km/h) 										|
-| Bumpy road				| Bumpy road										|
-| Speed limit (20km/h)	      		| Speed limit (20km/h)				 				|
+| Speed limit (60km/h)      		| Speed limit (60km/h)   									| 
+| Yield    			| Yield 										|
+| Keep right				| Keep right										|
+| Roundabout mandatory	      		| Roundabout mandatory				 				|
 | Speed limit (30km/h)			|Speed limit (30km/h)      							|
-| Speed limit (60km/h)			|Speed limit (60km/h)      							|
+
 
 
 The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
@@ -135,29 +156,7 @@ The code for making predictions on my final model is located in the 11th cell of
 
 For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .53         			| Stop sign    									| 
-| .2.1675653e-05    				| Speed limit (50km/h) 	 										|
-| .99					| Bumpy road													|
-| .0	      			| Speed limit (20km/h)				 				|
-| .9				    | Speed limit (30km/h)     							|
-| 1.0			    | Speed limit (60km/h)     							|
 
-INFO:tensorflow:Restoring parameters from .\lenet
-[[5.3014201e-01 4.6933591e-01 5.2100507e-04 1.0354216e-06 3.4842436e-09]
- [9.7496051e-01 1.4051526e-02 1.0535956e-02 4.3005211e-04 2.1675653e-05]
- [9.9924314e-01 6.2494935e-04 1.3203399e-04 2.2313480e-09 1.0302140e-18]
- [5.1201493e-01 4.8798504e-01 4.3405543e-11 2.4774509e-11 6.1084411e-14]
- [1.0000000e+00 2.3983929e-13 1.0448375e-15 7.9142087e-17 5.5983243e-19]
- [9.9730992e-01 2.6703512e-03 1.9688114e-05 2.3572751e-13 6.2075338e-14]]
-[[14  8  7  2  1]
- [33 42 28  3  2]
- [22 12 26 25 13]
- [ 5  3  1  2 40]
- [ 1  2  0  5  6]
- [ 3  2  1  5 35]]
-New Images Test Accuracy = 80.0%
 
 For the second image ... 
 
