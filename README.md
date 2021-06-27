@@ -19,10 +19,10 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: ./examples/hist1.png "Visualization"
-[image2]: ./examples/train_image1.png "Training dataset"
-[image3]: ./examples/test_image1.png "Test image"
-[image4]: ./examples/acc1.png "training acc"
+[image1]: ./examples/hist_1.png "Visualization"
+[image2]: ./examples/train_image_1.png "Training dataset"
+[image3]: ./examples/Screenshot_from_2017-12-17_15-07-31.png "Test image"
+[image4]: ./examples/acc_1.png "training acc"
 [image5]: ./examples/test_image_validation1.png "Test image result"
 [image6]: ./examples/test_image_validation2.png "Test image result"
 [image7]: ./examples/test_image_validation3.png "Test image result"
